@@ -109,6 +109,9 @@ public final class Device {
                         return;
                     }
 
+                    // Wait one second to ensure that the DisplayInfo of the display has been updated
+                    SystemClock.sleep(1000);
+
                     synchronized (Device.this) {
                         DisplayInfo displayInfo = ServiceManager.getDisplayManager().getDisplayInfo(displayId);
                         if (displayInfo == null) {
